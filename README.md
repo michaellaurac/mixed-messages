@@ -11,7 +11,7 @@ The project displays a fictional :sparkles: message :envelope: randomly generate
 The project features the following main elements:
 1. An straight-forward title and an evocative illustration
 3. A sober style respecting the theme
-4. A series a user actions described in the [instructions](#instructions)
+4. A series a patient actions described in the [instructions](#instructions)
 
 ### Dynamic behaviors :dizzy: 
 Taking into account, the features implemented in the project a particular attention was paid to allowing some level of **_dynamism_** to the behaviors of each of the elements in order to practice with some **_event management_** aspects of the project.
@@ -33,7 +33,11 @@ Although partially included, **_error handling_** was not the primary focus of t
 
 ## Instructions :mega::mega::mega:
 
-When landing on the page the user can immediately read every appointment detail:
+### Appointment details
+
+<img src=".//resources/images/appointment-details.jpg" height="400px">
+
+When landing on the page the patient can immediately read every appointment detail:
 
 1. Time and location
 
@@ -48,6 +52,10 @@ When landing on the page the user can immediately read every appointment detail:
    2. Medical department employing the medical professional
 
 A text reminds the patient to bring the full relevant medical record to the appointment.
+
+### Appointment confirmation
+
+<img src=".//resources/images/appointment-confirmation.jpg" height="400px">
 
 The patient is then invited to make a choice:
 
