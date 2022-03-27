@@ -33,11 +33,28 @@ Although partially included, **_error handling_** was not the primary focus of t
 
 ## Instructions :mega::mega::mega:
 
-When landing on the page the user is immediately invited to click the unique button allowing the message for the next appointment to be generated and displayed.
+When landing on the page the user can immediately read every appointment detail:
 
-Two other buttons will then appear below the message.
-+ With the first button the the patient can confirm the appointment
-+ With the second button the patient can request the appointment to be rescheduled
+1. Time and location
+
+   1. Date and time
+   2. Location within the building
+   3. Address of the building
+
+2. Type of medical act
+
+3. Medical professional
+   1. Full name of the medical professional
+   2. Medical department employing the medical professional
+
+A text reminds the patient to bring the full relevant medical record to the appointment.
+
+The patient is then invited to make a choice:
+
++ With the first checkbox the patient can confirm the appointment which is the default option
++ With the second checkbox the patient can request the appointment to be rescheduled
+
+The choice can be submitted with the SEND button.
 
 A confirmation is then displayed after either action.
 
