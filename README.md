@@ -1,6 +1,6 @@
 # Hospital appointment reminder
 
-<img src=".//resources/images/screenshot.jpg" height="400px">
+<img src=".//resources/images/screenshot.jpg" width="1000px">
 
 ## Description :mag_right:
 The project models the page of a simplified hospital :hospital: online system on which the patient can find details about his or her next medical appointment and confirm the appointment.
@@ -37,7 +37,7 @@ Although partially included, **_error handling_** was not the primary focus of t
 
 ### Appointment details
 
-<img src=".//resources/images/appointment-details.jpg" height="400px">
+<img src=".//resources/images/appointment-details.jpg" width="500px">
 
 When landing on the page the patient can immediately read every appointment detail:
 
@@ -57,7 +57,7 @@ A text reminds the patient to bring the full relevant medical record to the appo
 
 ### Appointment confirmation
 
-<img src=".//resources/images/appointment-confirmation.jpg" height="400px">
+<img src=".//resources/images/appointment-confirmation.jpg" width="500px">
 
 The patient is then invited to make a choice:
 
