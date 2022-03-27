@@ -1,0 +1,137 @@
+body {
+  background-size: 2200px 1500px;
+  background-image: linear-gradient(0.25turn, rgba(78, 216, 221, 0.7), rgba(255, 0, 119, 0.1)),
+                    url("../resources/images/medical-professional.jpg");
+}
+
+h1 {
+  text-align: left;
+  margin: 25px ;
+  font-family: 'Barlow', sans-serif;
+}
+
+a {
+  text-decoration: underline;
+  font-weight: 700;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: rgb(78, 216, 221);
+}
+
+p {
+  margin: 0px;
+}
+
+.card {
+  width: 550px;
+  background:rgba(78, 216, 221, 0.7);
+  border-radius: 20px;
+  box-shadow: 0.6em 0.6em 1.2em rgb(0 0 0 / 5%);
+  padding: 20px 10px;
+  margin: 20px 25% ;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400; 
+  text-align: center;
+}
+
+.background-white {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.text-small {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.bolder {
+  font-size: 1.5em;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.margin-top-bottom {
+  margin: 20px 60px;
+}
+
+.margin-top-bottom-double {
+  margin: 40px 0;
+}
+
+.padding {
+  padding: 20px;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  width: 200px;
+  background: rgb(78, 216, 221);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0.2em 0.2em 0.4em rgb(0 0 0 / 5%);
+  text-shadow: 0.1em 0.1em 0.2em rgb(255 255 255 / 5%);;
+  padding: 10px 5px;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700; 
+  text-align: center;
+}
+
+.button:hover {
+  width: 202px;
+  height: 40px;
+  margin: 19px 0;
+  font-size: 85%;
+  box-shadow: 0.1em 0.1em 0.2em rgb(0 0 0 / 5%);
+}
+
+.float {
+  float: left;
+}
+
+.image-small {
+  height: 80px;
+}
+
+#appointment-confirm-checkbox {
+  width: 18px !important;
+  height: 18px !important;
+  margin-right: 10px;
+  appearance:none;
+  outline: 2px solid rgb(78, 216, 221);
+  box-shadow: none;
+  font-size: 2em;
+}
+
+#appointment-confirm-checkbox:hover {
+  background-color: rgb(78, 216, 221);
+}
+
+#appointment-confirm-checkbox:checked {
+  background-color: rgb(78, 216, 221);
+}
+
+#appointment-confirm-checkbox:checked:after {
+  content: '\2713';
+  color: white;
+  position: absolute;
+  line-height: 1rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding-left: 0.15rem;
+}

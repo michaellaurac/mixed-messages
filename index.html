@@ -15,45 +15,58 @@
     <meta property="og:type" content="website">
     <meta property="og:description" content="A simple page generating a reminder from the hospital to the patient about his next appointment">
 
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,100&family=Nunito:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
 
   </head>
 
   <body>
 
-    <!-- <img src="./resources/images/medical-professional.jpg" alt="A young doctor in a hospital corridor"> -->
-
     <header>
-
-      <h1 id="hospital">YLH - Your Local Hospital</h1>
-
+      <div id="hospital" class="display-flex-center margin-top-bottom">
+        <img src="./resources/images/caduceus.png" alt="Logo of the hospital in the shape of a caduceus" id="hospital-logo" class="image-small float">
+        <h1 id="hospital-name">YLH - Your Local Hospital</h1>
+      </div>
     </header>
     
-    <div id="appointment" class="card">
-      
-      <h2>Remember your next appointment at the hospital</h2>
-      
-      <p id="appointment-welcome">You will welcome you</p>
-      <p id="appointment-time">on the 26th March 2022 at 15.00</p>
-      <p id="appointment-location">On the 1st floor of the main building</p>
-      <p id="appointment-address">located on Apple Road 32, 51616 London</p>
-      <p id="appointment-purpose">for a consultation</p>
-      <p id="appointment-professional">with Dr Oliver Gulp from the Department of Neurology.</p>
-      
-      <p id="appointment-documents">Please make sure to bring the relevant medical records with you as well as your medical insurance card.</p>
-      <p id="appointment-no-show">We kindly remind you that if you are not able to cancel the appointment and do not show up, a fee will be charged with no claim possible to your medical insurance</p>
-      
-      <div id="appointment-action">
+    <main>
+
+      <div id="appointment" class="card">
         
-        <input type="checkbox" id="appointment-confirm" name="appointment-confirm">
-        <label for="appointment-confirm">I will be present and would like to confirm my appointment</label>
+        <h2>Your next appointment at the hospital</h2>
         
-        <input type="submit" id="appointment-submit" name="appointment-submit">
-        <a href="" id="appointment-reschedule">I will not be able to attend and would like to reschedule</a>
-      
+        <p id="appointment-welcome" class="margin-top-bottom">We will welcome you</p>
+        <p id="appointment-time" class="bold">on the 26th March 2022 at 15.00</p>
+        <p id="appointment-location" class="bold">on the 1st floor of the main building</p>
+        <p id="appointment-address" class="bold">located on Apple Road 32, 51616 London</p>
+        <p class="margin-top-bottom">for a</p>
+        <p id="appointment-purpose" class="bold">consultation</p>
+        <p class="margin-top-bottom">with</p>
+        <p id="appointment-professional" class="bold">with Dr Oliver Gulp</p>
+        <p id="appointment-speciality" class="bold">from the Department of Neurology</p>
+        
+        <p id="appointment-documents" class="margin-top-bottom">Please make sure to bring the relevant medical records with you as well as your medical insurance card.</p>
+        
+        <div id="appointment-action" class="margin-top-bottom-double background-white padding">
+          <div id="appointment-confirm" class="display-flex-center">
+            <input type="checkbox" id="appointment-confirm-checkbox" name="appointment-confirm-checkbox" checked="checked">
+            <label for="appointment-confirm-checkbox" class="bold italic">I will be present and would like to confirm my appointment</label>
+          </div>
+
+          <input type="submit" id="appointment-submit" name="appointment-submit" class="button bold margin-top-bottom">
+          <a href="" id="appointment-reschedule" class="italic display-block ">I will not be able to attend and would like to reschedule</a>
+          
+          <p id="appointment-no-show" class="margin-top-bottom italic text-small">Disclaimer: any confirmed appointment not attended and which would not have been cancelled at least 12h before its start, might be charged with no claim possible to your medical insurance</p>
+        </div>
+
+        <p class="bolder margin-top-bottom">We look forward to taking care of you!</p>
+
       </div>
-      <h2>We look forward to taking care of you!</h2>
-    </div>
+
+    </main>
 
   </body>
 
