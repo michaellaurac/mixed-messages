@@ -1,17 +1,19 @@
 # Hospital appointment reminder
 
+<img src=".//resources/images/screenshot.jpg" height="400px">
+
 ## Description :mag_right:
-The project models a simplified hospital :hospital: online system on which the patient may ask to be reminded about their next medical appointment. 
+The project models the page of a simplified hospital :hospital: online system on which the patient can find details about his or her next medical appointment and confirm the appointment.
 
-Upon request the page will display a message including all necessary details for the patient not to miss the appointment :ambulance: with the medical professional :mask:.
+A message including all necessary details for the patient not to miss the appointment :ambulance: with the medical professional :mask: is displayed.
 
-The project displays a fictional :sparkles: message :envelope: randomly generated according to the requirements of the [**Mixed Message**](https://www.codecademy.com/paths/back-end-engineer-career-path/tracks/becp-22-portfolio-project-mixed-messages/modules/becp-22-mixed-messages/kanban_projects/mixed-messages) project from [**Codecademy**](https://www.codecademy.com/).
+The project constructs a fictional :sparkles: message :envelope: randomly generated according to the requirements of the [**Mixed Message**](https://www.codecademy.com/paths/back-end-engineer-career-path/tracks/becp-22-portfolio-project-mixed-messages/modules/becp-22-mixed-messages/kanban_projects/mixed-messages) project from [**Codecademy**](https://www.codecademy.com/).
 
 ## Features :star::star::star:
 The project features the following main elements:
 1. An straight-forward title and an evocative illustration
 3. A sober style respecting the theme
-4. A series a patient actions described in the [instructions](#instructions)
+4. A couple of patient actions described in the [instructions](#instructions)
 
 ### Dynamic behaviors :dizzy: 
 Taking into account, the features implemented in the project a particular attention was paid to allowing some level of **_dynamism_** to the behaviors of each of the elements in order to practice with some **_event management_** aspects of the project.
