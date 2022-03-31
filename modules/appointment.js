@@ -67,10 +67,12 @@ class Appointment {
   static ONE                        = 1
   static TWO                        = 2
   static THREE                      = 3
+  static SEVEN                      = 7
   static TEN                        = 10
   static ELEVEN                     = 11
   static TWELVE                     = 12
   static THIRTEEN                   = 13
+  static TWENTY_THREE               = 23
                                         
   static CARDINALS_ST               = "st"
   static CARDINALS_ND               = "nd"
@@ -117,7 +119,7 @@ class Appointment {
   }
 
   get weekDay() {
-    return Appointment.WEEKDAYS.at(this._weekDay);
+    return this._weekDay;
   }
 
   get day() {
@@ -129,7 +131,7 @@ class Appointment {
   }
 
   get month() {
-    return Appointment.MONTHS.at(this._month);
+    return this._month;
   }
 
   get year() {
@@ -186,14 +188,17 @@ class Appointment {
   }
 
   static generateWeekDayFrom(date) {
-    return date.getDay();
+    // Extract the week day from the given date as a string from Sunday, Monday, Tuesday,... until Saturday
+    return Appointment.WEEKDAYS.at(date.getDay());
   }
 
   static generateDayFrom(date) {
+    // Extract the date from the given date as an integer from 1 to 31
     return date.getDate();
   }
 
   static generateDayCardinalFrom(day) {
+    // Return the correct cardinal of the day between "st", "nd", "rd" and "th"
     if (Appointment.isFirst(day)) {
       return Appointment.CARDINALS_ST;
     }
@@ -207,42 +212,52 @@ class Appointment {
   }
 
   static generateMonthFrom(date) {
-    return date.getMonth();
+    // Extract the month from the given date as a string from January, February, March,... until December
+    return Appointment.MONTHS.at(date.getMonth());
   }
 
   static generateYearFrom(date) {
+    // Extract the full year from the given date as an integer
     return date.getFullYear();
   }
 
   static isFirst(day) {
+    // Return true if day is the 1st, 21st or 31st of the month
     return (day % Appointment.TEN === Appointment.ONE && day !== Appointment.ELEVEN);
   }
 
   static isSecond(day) {
+    // Return true if day is the 2nd or 22nd of the month
     return (day % Appointment.TEN === Appointment.TWO && day !== Appointment.TWELVE);
   }
 
   static isThird(day) {
+    // Return true if day is the 3rd or 23rd of the month
     return (day % Appointment.TEN === Appointment.THREE && day !== Appointment.THIRTEEN);
   }
 
   static isNth(day) {
+    // Return true is the cardinal of the day in the month should end with "th" like for in the "6th" 
     return !(Appointment.isFirst(day) || Appointment.isSecond(day) || Appointment.isThird(day));
   }
 
   static millisecondsWithin(span) {
+    // Converts a span in a Date format YYYY-MM-DDTHH:MM:SS.MMMZ into into milliseconds
     return span.valueOf();
   }
 
   static millisecondsFrom(date) {
+    // Convert a date in a Date format YYYY-MM-DDTHH:MM:SS.MMMZ into into milliseconds 
     return date.valueOf();
   }
 
   static dateFrom(milliseconds) {
+    // Convert a date in milliseconds into a Date format YYYY-MM-DDTHH:MM:SS.MMMZ
     return new Date(milliseconds);
   }
 
   static dateSpanWithin(years) {
+    // Return the period in full years in a Date format as defined by the difference between the date on January the given year and January at year zero
     return (new Date(years, Appointment.ZERO ) - new Date(Appointment.ZERO, Appointment.ZERO));
   }
 
@@ -263,7 +278,8 @@ class Appointment {
     let randomFutureTimeAsDate = Appointment.dateFrom(randomFutureTimeInMilliseconds);
     
     // Round up the minutes to the next tens, and set the seconds and milliseconds to zero;
-    randomFutureTimeAsDate.setMinutes( Math.round(randomFutureTimeAsDate.getMinutes() / Appointment.TEN) * Appointment.TEN );
+    randomFutureTimeAsDate.setHours( Math.round(( randomFutureTimeAsDate.getHours() / Appointment.TWENTY_THREE ) * Appointment.ELEVEN ) + Appointment.SEVEN )
+    randomFutureTimeAsDate.setMinutes( Math.round( randomFutureTimeAsDate.getMinutes() / Appointment.TEN ) * Appointment.TEN );
     randomFutureTimeAsDate.setSeconds( Appointment.ZERO );
     randomFutureTimeAsDate.setMilliseconds( Appointment.ZERO );
 
