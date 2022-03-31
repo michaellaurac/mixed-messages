@@ -62,12 +62,20 @@ class Appointment {
                                         "Wednesday",
                                         "Thursday",
                                         "Friday",
-                                        "Saturday" ]
-
-  static CARDINALS                  = [ "st",
-                                        "nd",
-                                        "rd",
-                                        "th" ]
+                                        "Saturday" ];
+  static ZERO                       = 0
+  static ONE                        = 1
+  static TWO                        = 2
+  static THREE                      = 3
+  static TEN                        = 10
+  static ELEVEN                     = 11
+  static TWELVE                     = 12
+  static THIRTEEN                   = 13
+                                        
+  static CARDINALS_ST               = "st"
+  static CARDINALS_ND               = "nd"
+  static CARDINALS_RD               = "rd"
+  static CARDINALS_TH               = "th"
   
   static MONTHS                     = [ "January",
                                         "February",
@@ -88,6 +96,7 @@ class Appointment {
     this._hour = Appointment.generateHourFrom(this._time);
     this._weekDay = Appointment.generateWeekDayFrom(this._time);
     this._day = Appointment.generateDayFrom(this._time);
+    this._dayCardinal = Appointment.generateDayCardinalFrom(this._day);
     this._month = Appointment.generateMonthFrom(this._time);
     this._year = Appointment.generateYearFrom(this._time);
     this._act = this.generateMedicalAct();
@@ -113,6 +122,10 @@ class Appointment {
 
   get day() {
     return this._day;
+  }
+
+  get dayCardinal() {
+    return this._dayCardinal;
   }
 
   get month() {
@@ -180,12 +193,41 @@ class Appointment {
     return date.getDate();
   }
 
+  static generateDayCardinalFrom(day) {
+    if (Appointment.isFirst(day)) {
+      return Appointment.CARDINALS_ST;
+    }
+    if (Appointment.isSecond(day)) {
+      return Appointment.CARDINALS_ND;
+    }
+    if (Appointment.isThird(day)) {
+      return Appointment.CARDINALS_RD;
+    }
+    return Appointment.CARDINALS_TH;
+  }
+
   static generateMonthFrom(date) {
     return date.getMonth();
   }
 
   static generateYearFrom(date) {
     return date.getFullYear();
+  }
+
+  static isFirst(day) {
+    return (day % Appointment.TEN === Appointment.ONE && day !== Appointment.ELEVEN);
+  }
+
+  static isSecond(day) {
+    return (day % Appointment.TEN === Appointment.TWO && day !== Appointment.TWELVE);
+  }
+
+  static isThird(day) {
+    return (day % Appointment.TEN === Appointment.THREE && day !== Appointment.THIRTEEN);
+  }
+
+  static isNth(day) {
+    return !(Appointment.isFirst(day) || Appointment.isSecond(day) || Appointment.isThird(day));
   }
 
   static millisecondsWithin(span) {
@@ -201,7 +243,7 @@ class Appointment {
   }
 
   static dateSpanWithin(years) {
-    return (new Date(years,0) - new Date(0,0));
+    return (new Date(years, Appointment.ZERO ) - new Date(Appointment.ZERO, Appointment.ZERO));
   }
 
   static randomFutureTimeSelection(years) {
@@ -221,9 +263,9 @@ class Appointment {
     let randomFutureTimeAsDate = Appointment.dateFrom(randomFutureTimeInMilliseconds);
     
     // Round up the minutes to the next tens, and set the seconds and milliseconds to zero;
-    randomFutureTimeAsDate.setMinutes( Math.round(randomFutureTimeAsDate.getMinutes() / 10) * 10 );
-    randomFutureTimeAsDate.setSeconds(0);
-    randomFutureTimeAsDate.setMilliseconds(0);
+    randomFutureTimeAsDate.setMinutes( Math.round(randomFutureTimeAsDate.getMinutes() / Appointment.TEN) * Appointment.TEN );
+    randomFutureTimeAsDate.setSeconds( Appointment.ZERO );
+    randomFutureTimeAsDate.setMilliseconds( Appointment.ZERO );
 
     return randomFutureTimeAsDate;
   }
@@ -233,6 +275,7 @@ const appointment = new Appointment();
 console.log(appointment.time);
 console.log(appointment.weekDay);
 console.log(appointment.day);
+console.log(appointment.dayCardinal);
 console.log(appointment.month);
 console.log(appointment.year);
 console.log(appointment.hour);
