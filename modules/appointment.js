@@ -1,3 +1,6 @@
+const { randomIntegerBetweenZeroAnd } = require('./math-functions.js');
+const { randomItemIn } = require('./array-functions.js');
+
 class Appointment {
   
   static MEDICAL_ACT                = [ "a surgery",
@@ -156,27 +159,18 @@ class Appointment {
   }
 
   generateMedicalAct() {    
-    return Appointment.randomArraySelection(Appointment.MEDICAL_ACT);
+    return randomItemIn(Appointment.MEDICAL_ACT);
   }
 
   generateMedicalProfessional() {
-    return Appointment.randomArraySelection(Appointment.MEDICAL_PROFESSIONAL);
+    return randomItemIn(Appointment.MEDICAL_PROFESSIONAL);
   }
 
   generateMedicalSpecialty() {
-    return Appointment.randomArraySelection(Appointment.MEDICAL_SPECIALTY);
+    return randomItemIn(Appointment.MEDICAL_SPECIALTY);
   }
 
-  /* Array manipulations */
-  static randomArraySelection(array) {
-    const randomIndex = Appointment.randomIntegerSelection(array.length);
-    return array.at(randomIndex);
-  }
-
-  /* Number manipulations */
-  static randomIntegerSelection(integer) {
-    return Math.floor(Math.random() * integer);
-  }
+  
 
   /* Date manipulations */
   static generateMinuteFrom(date) {
@@ -268,7 +262,7 @@ class Appointment {
     // Convert the span in milliseconds
     const millisecondsSpan = Appointment.millisecondsWithin(dateSpan);
     // Select a random integer within the span of years in milliseconds
-    const randomTimeInMilliseconds = Appointment.randomIntegerSelection(millisecondsSpan);
+    const randomTimeInMilliseconds = randomIntegerBetweenZeroAnd(millisecondsSpan);
     // Get the current time in milliseconds since the 1st January 1900 at 00:00:00.000 
     const nowInMilliseconds = Appointment.millisecondsFrom(Date.now());
     // Add the currenti time to the random selection within the span of years in milliseconds
