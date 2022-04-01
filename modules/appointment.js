@@ -1,5 +1,7 @@
-const { randomItemIn } = require('./array-functions.js');
-const DateFunctions = require('./date-functions.js');
+import { randomItemIn } from './array-functions.js';
+import { DateFunctions } from './date-functions.js';
+//const { randomItemIn } = require('./array-functions.js');
+//const DateFunctions = require('./date-functions.js');
 
 class Appointment {
   
@@ -60,6 +62,7 @@ MEDICAL_SPECIALTY           = [ "Cardiac Surgery",
                                 "Ophtalmology" ]
 
   constructor() {
+
     this._time = this.generateAppointmentTime();
     this._minute = DateFunctions.generateMinuteFrom(this._time);
     this._hour = DateFunctions.generateHourFrom(this._time);
@@ -71,6 +74,7 @@ MEDICAL_SPECIALTY           = [ "Cardiac Surgery",
     this._act = this.generateMedicalAct();
     this._professional = this.generateMedicalProfessional();
     this._specialty = this.generateMedicalSpecialty();
+
   }
 
   get time() {
@@ -135,4 +139,10 @@ MEDICAL_SPECIALTY           = [ "Cardiac Surgery",
   }
 }
 
-module.exports = new Appointment();
+export { Appointment };
+//module.exports = Appointment;
+
+//const d = new DateFunctions();
+
+//const appointmentProfessional = document.getElementById("appointment-professional");
+//appointmentProfessional.innerText = "lala";
