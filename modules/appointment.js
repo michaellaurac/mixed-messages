@@ -5,7 +5,8 @@ import { DateFunctions } from './date-functions.js';
 
 class Appointment {
   
-  MAX_YEARS_OF_WAITING_LIST = 1
+  MAX_MONTHS_OF_WAITING_LIST = 24
+  MAX_MONTHS_FOR_POSTPONING = 2
 
   MEDICAL_ACT               = [ "a surgery",
                                 "a treatment",
@@ -121,9 +122,23 @@ MEDICAL_SPECIALTY           = [ "Cardiac Surgery",
     return this._specialty;
   }
 
+  set time(newTime) {
+    this._time = newTime;
+  }
   /* Appointment manipulations */
   generateAppointmentTime() {
-    return DateFunctions.randomFutureTimeWithin(this.MAX_YEARS_OF_WAITING_LIST);
+    return DateFunctions.randomFutureTimeWithin(this.MAX_MONTHS_OF_WAITING_LIST);
+  }
+
+  postponeAppointmentTime() {
+    this._time = DateFunctions.randomFutureTimeWithin(this.MAX_MONTHS_FOR_POSTPONING, this._time);
+    this._minute = DateFunctions.generateMinuteFrom(this._time);
+    this._hour = DateFunctions.generateHourFrom(this._time);
+    this._weekDay = DateFunctions.generateWeekDayFrom(this._time);
+    this._day = DateFunctions.generateDayFrom(this._time);
+    this._dayCardinal = DateFunctions.generateDayCardinalFrom(this._day);
+    this._month = DateFunctions.generateMonthFrom(this._time);
+    this._year = DateFunctions.generateYearFrom(this._time);
   }
 
   generateMedicalAct() {    

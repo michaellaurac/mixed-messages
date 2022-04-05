@@ -34,7 +34,7 @@
     
     <main>
 
-      <div id="appointment" class="card background-white ">
+      <div id="appointment" class="card background-white">
         
         <h2>Your next appointment at the hospital</h2>
         
@@ -42,32 +42,36 @@
         <p id="appointment-time" class="bold">on the 26th March 2022 at 15.00</p>
         <p id="appointment-location" class="bold">on the 1st floor of the main building</p>
         <p id="appointment-address" class="bold">located on 106 Plumstead Common Road, SE18 3RE London</p>
-        <p class="margin-top-bottom">for a</p>
+        <p class="margin-top-bottom">for</p>
         <p id="appointment-act" class="bold">consultation</p>
         <p class="margin-top-bottom">with</p>
         <p id="appointment-professional" class="bold">Dr Oliver Gulp</p>
         <p id="appointment-specialty" class="bold">from the Department of Neurology</p>
         
         <p id="appointment-documents" class="margin-top-bottom padding-left-right">Please make sure to bring the relevant medical records with you as well as your medical insurance card.</p>
-        
-        <div id="appointment-action" class="margin-top-bottom-double padding">
-          <p id="appointment-options" class="display-flex-center bold padding-left-right margin-top-bottom underline">Please choose one of the following options:</p>
-          <div id="appointment-confirm" class="display-flex-left padding-top-bottom">
-            <input type="checkbox" id="appointment-confirm-checkbox" name="appointment-confirm-checkbox" checked>
-            <label for="appointment-confirm-checkbox" class="bold italic">I will be present and would like to confirm my appointment</label>
-          </div>
-          <div id="appointment-reschedule" class="display-flex-left padding-top-bottom">
-            <input type="checkbox" id="appointment-reschedule-checkbox" name="appointment-reschedule-checkbox">
-            <label for="appointment-reschedule-checkbox" class="bold italic">I am not able to attend and would like to reschedule</label>
-          </div>
-
-          <input type="submit" value="SEND" id="appointment-submit" name="appointment-submit" class="button bold margin-top-bottom">
-          
-          <p id="appointment-no-show" class="margin-top-bottom padding-left-right italic text-small">Disclaimer: any confirmed appointment not attended and which would not have been cancelled at least 12h before its start, might be charged with no claim possible to your medical insurance</p>
+      </div>
+      <div id="action" class="card background-white">  
+        <p id="action-instruction" class="display-flex-center bold padding-left-right margin-top-bottom underline">Please choose one of the following options:</p>
+        <div id="action-option-attend" class="display-flex-left padding-top-bottom  margin-left">
+          <input type="checkbox" id="action-option-attend-checkbox" name="action-option-attend-checkbox">
+          <label for="action-option-attend-checkbox" id="action-option-attend-label" class="bold italic">I will attend and would like to confirm my appointment</label>
         </div>
-
-        <p class="bolder margin-top-bottom">We look forward to taking care of you!</p>
-
+        <div id="action-option-postpone" class="display-flex-left padding-top-bottom  margin-left">
+          <input type="checkbox" id="action-option-postpone-checkbox" name="action-option-postpone-checkbox">
+          <label for="action-option-postpone-checkbox" id="action-option-postpone-label" class="bold italic">I am not able to attend and would like to postpone</label>
+        </div>
+        <div id="action-buttons" class="display-flex-center margin-top-bottom">
+          <button type="button" id="action-attend-button" class="button attend bold margin-left-right" hidden>ATTEND</button>
+          <button type="button" id="action-postpone-button" class="button postpone bold margin-left-right" hidden>POSTPONE</button>
+          <button type="button" id="action-cancel-button" class="button cancel bold margin-left-right" hidden>CANCEL</button>
+        </div>
+        <p id="action-disclaimer-no-show" class="margin-top-bottom-double padding-left-right italic text-small" hidden>Please be advised that any confirmed appointment missed and not cancelled at least 12h before its start, may be charged by the hospital with no possible claim to your medical insurance</p>
+      </div>
+      <div id="generation" class="card background-white">
+        <p id="generation-info" class="bolder margin-top-bottom">We look forward to taking good care of you!</p>
+        <div id="generation-buttons" class="display-flex-center margin-top-bottom">
+          <button type="button" id="generation-new-button" class="button button-large generate bold margin-left-right">GENERATE NEW APPOINTMENT</button>
+        </div>
       </div>
 
     </main>

@@ -117,21 +117,23 @@ class DateFunctions {
     return new Date(milliseconds);
   }
 
-  static dateSpanWithin(years) {
-    // Return the period in full years in a Date format as defined by the difference between the date on January the given year and January at year zero
-    return (new Date(years, DateFunctions.ZERO ) - new Date(DateFunctions.ZERO, DateFunctions.ZERO));
+  static dateSpanWithin(months) {
+    // Return the period in full months in a Date format as defined by the difference between the date on January the given year and January at year zero
+    return (new Date(Math.floor( months / DateFunctions.TWELVE ), (months % DateFunctions.TWELVE), DateFunctions.ZERO ) - new Date(DateFunctions.ZERO, DateFunctions.ZERO));
   }
 
-  static randomFutureTimeWithin(years) {
-    // Generate a span of years based on the input number of years as a Date format
-    const dateSpan = DateFunctions.dateSpanWithin(years);
-
+  static randomFutureTimeWithin(months, date) {
+    if (date === undefined) {
+      date = Date.now();
+    }
+    // Generate a span of months based on the input number of months as a Date format
+    const dateSpan = DateFunctions.dateSpanWithin(months);
     // Convert the span in milliseconds
     const millisecondsSpan = DateFunctions.millisecondsWithin(dateSpan);
     // Select a random integer within the span of years in milliseconds
     const randomTimeInMilliseconds = randomIntegerBetweenZeroAnd(millisecondsSpan);
     // Get the current time in milliseconds since the 1st January 1900 at 00:00:00.000 
-    const nowInMilliseconds = DateFunctions.millisecondsFrom(Date.now());
+    const nowInMilliseconds = DateFunctions.millisecondsFrom(date);
     // Add the currenti time to the random selection within the span of years in milliseconds
     const randomFutureTimeInMilliseconds = randomTimeInMilliseconds + nowInMilliseconds;
     
