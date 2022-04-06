@@ -102,6 +102,11 @@ class DateFunctions {
     return !(isFirst(day) || isSecond(day) || isThird(day));
   }
 
+  static formatMinutes(minutes) {
+    const stringMinutes = minutes.toString( DateFunctions.TEN );
+    return (stringMinutes.length === 2) ? stringMinutes : stringMinutes.padStart(2, '0');
+  }
+
   static millisecondsWithin(span) {
     // Converts a span in a Date format YYYY-MM-DDTHH:MM:SS.MMMZ into into milliseconds
     return span.valueOf();

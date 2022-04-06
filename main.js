@@ -1,4 +1,5 @@
-import { Appointment } from './modules/appointment.js';
+import { Appointment } from './modules/appointment-class.js';
+import { DateFunctions } from './modules/date-functions.js';
 //const Appointment = require('./modules/appointment.js');
 
 
@@ -44,7 +45,7 @@ function generateNewRandomAppointment() {
   const appointmentAddress = document.getElementById("appointment-address");
 
   
-  appointmentTime.innerText = `${appointment.day}${appointment.dayCardinal} ${appointment.month} ${appointment.year} at ${appointment.hour}.${appointment.minute}`;
+  appointmentTime.innerText = `${appointment.day}${appointment.dayCardinal} ${appointment.month} ${appointment.year} at ${appointment.hour}.${DateFunctions.formatMinutes(appointment.minute)}`;
   appointmentAct.innerText = `${appointment.act}`;
   appointmentProfessional.innerText = `Dr ${appointment.professional}`;
   appointmentDepartment.innerText = `Department of ${appointment.department}`;
@@ -60,7 +61,7 @@ function generateFutureAppointment() {
 
   const appointmentTime = document.getElementById("appointment-time");
 
-  appointmentTime.innerText = `on the ${appointment.day}${appointment.dayCardinal} ${appointment.month} ${appointment.year} at ${appointment.hour}.${appointment.minute}`;
+  appointmentTime.innerText = `${appointment.day}${appointment.dayCardinal} ${appointment.month} ${appointment.year} at ${appointment.hour}.${DateFunctions.formatMinutes(appointment.minute)}`;
 
   stateInitial();
 }
