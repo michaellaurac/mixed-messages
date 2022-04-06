@@ -39,12 +39,17 @@ function generateNewRandomAppointment() {
   const appointmentTime = document.getElementById("appointment-time");
   const appointmentAct = document.getElementById("appointment-act");
   const appointmentProfessional = document.getElementById("appointment-professional");
-  const appointmentSpecialty = document.getElementById("appointment-specialty");
+  const appointmentDepartment = document.getElementById("appointment-department");
+  const appointmentFloor = document.getElementById("appointment-floor");
+  const appointmentAddress = document.getElementById("appointment-address");
 
-  appointmentTime.innerText = `on the ${appointment.day}${appointment.dayCardinal} ${appointment.month} ${appointment.year} at ${appointment.hour}.${appointment.minute}`;
+  
+  appointmentTime.innerText = `${appointment.day}${appointment.dayCardinal} ${appointment.month} ${appointment.year} at ${appointment.hour}.${appointment.minute}`;
   appointmentAct.innerText = `${appointment.act}`;
-  appointmentProfessional.innerText = `with Dr ${appointment.professional}`;
-  appointmentSpecialty.innerText = `from the Department of ${appointment.specialty}`;
+  appointmentProfessional.innerText = `Dr ${appointment.professional}`;
+  appointmentDepartment.innerText = `Department of ${appointment.department}`;
+  appointmentFloor.innerText = `${appointment.floor} floor of the house`;
+  appointmentAddress.innerText = `${appointment.address}`;
 
   stateInitial();
 }

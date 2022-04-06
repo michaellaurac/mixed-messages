@@ -6,7 +6,7 @@ body {
 
 h1 {
   text-align: left;
-  margin: 25px ;
+  margin: 10px ;
   font-family: 'Barlow', sans-serif;
 }
 
@@ -29,8 +29,8 @@ p {
   background:rgba(78, 216, 221, 0.7);
   border-radius: 20px;
   box-shadow: 0.6em 0.6em 1.2em rgb(0 0 0 / 5%);
-  padding: 20px 0px;
-  margin: 20px 25% ;
+  padding: 10px 0px;
+  margin: 20px auto;
   font-family: 'Nunito', sans-serif;
   font-weight: 400; 
   text-align: center;
@@ -60,8 +60,16 @@ p {
   text-decoration: underline;
 }
 
+.margin-top-bottom-half {
+  margin: 15px 0 10px 0;
+}
+
 .margin-top-bottom {
   margin: 20px 0;
+}
+
+.margin-top-bottom-double {
+  margin: 30px 0;
 }
 
 .margin-left-right {
@@ -72,9 +80,6 @@ p {
   margin-left: 25px;
 }
 
-.margin-top-bottom-double {
-  margin: 30px 0;
-}
 
 .padding-top-bottom {
   padding: 10px 0;
@@ -91,13 +96,14 @@ p {
 .display-flex-center {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .display-flex-left {
   display: flex;
   justify-content: left;
   align-items: center;
-  padding-left: 50px;
+  padding-left: 40px;
 }
 
 .button {
@@ -144,7 +150,7 @@ p {
 }
 
 .image-small {
-  height: 80px;
+  height: 50px;
 }
 
 #action-option-attend-checkbox, #action-option-postpone-checkbox {
